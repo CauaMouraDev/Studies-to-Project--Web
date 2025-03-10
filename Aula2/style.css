@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+}
+
+#cabeçalho{
+    background-color: purple;
+    padding: 10px;
+   border: 6px solid;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}   
+#main{
+    background-color: chocolate;
+    padding: 100px;
+    margin: 0px;
+    border: 5px solid;
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+#secao{
+    background-color: rgb(169, 173, 114);
+    padding:200px;
+    border: 5px solid;
+    text-align: center;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#footer{
+    background-color: purple;
+    padding: 150px;
+    margin:0;
+    border: 2px solid;
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   
+}
