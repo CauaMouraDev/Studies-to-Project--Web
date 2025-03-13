@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -9,6 +9,18 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-image: url(img/apple.img);
     background-attachment: fixed;
+    
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+a:hover{
+    color: rgb(100, 143, 195);
+    border-radius: 7px;
+    padding: 10px;
+    transition: 0.5s;
 }
     header{
     background-color: white;
@@ -37,16 +49,15 @@ input{
     margin: 10px;
     border-radius: 5px;
     border: 1px solid black;
-    color: darkslategray;
+    color: rgb(124, 73, 156);
 }
 
-button:hover{
-    transition: 1.5s;
+button{
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
     border: 5px solid black;
-    background-color: aquamarine;
+    background-color: rgb(192, 105, 193);
     color: darkslategray;
     cursor: pointer;
     width: 100px;
@@ -56,6 +67,12 @@ button:hover{
     font-size: 20px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
+    text-decoration: none;
+}
+button:hover{
+    transition: 0.5s;
+    background-color: rgb(124, 73, 156);
+    color: white;
 }
 
 #apple{
@@ -151,6 +168,7 @@ button:hover{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-image: url(img/apple.img);
     background-attachment: fixed;
+    width: 60%;
 }
  #perfil img{
     
@@ -162,6 +180,7 @@ button:hover{
     margin-top: 50%;
     width: 40%;
     margin-right: 35%;
+    border:  5px solid black;
 
     
  }
@@ -178,13 +197,30 @@ button:hover{
     background-image: url(img/backapple.png);
     background-position: center;
     background-repeat: no-repeat;
+    word-wrap: break-word;
 
 
 
 }
 
 #nomeperfil{
-    font-size: 45px;
+    font: size 30px;
 }
 
-    
+
+#botao {
+    display:flex;
+    justify-content: center;
+    place-items: center;
+    text-align: center;
+    color: lightblue;
+    font-size: 20px;
+    border-radius: 55px;
+    align-items: center;
+    margin-bottom: 50px;
+   color: rgb(141, 156, 156);
+}    
+
+h2{
+    max-width: 100%;
+}
