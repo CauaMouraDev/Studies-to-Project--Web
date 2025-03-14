@@ -224,3 +224,15 @@ button:hover{
 h2{
     max-width: 100%;
 }
+
+
+#login{
+    text-align: center;
+    color: lightblue;
+    background-size: cover;
+    font-size: 20px;
+    background-color: rgb(47, 59, 81);
+    border:  5px solid black;
+    border-radius: 10px;
+    background-size: cover;
+}
