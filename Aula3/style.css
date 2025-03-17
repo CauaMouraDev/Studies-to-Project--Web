@@ -1,0 +1,87 @@
+html{
+    scroll-behavior: smooth;
+}
+body{  margin: 0;
+       background-image: url(img/imagem\ do\ ney.webp);
+       background-repeat: no-repeat;
+       background-position:center;
+       background-size: cover;
+       height: 100vh;
+
+       
+
+
+ }
+
+
+#titulo{
+    background-color: blue;
+    margin: 0;
+    text-align:center ;
+    font-family: Arial;
+
+}
+
+p{
+    height: 18px;
+    color: gray;
+}
+
+
+.destaque{
+         background-color: yellow;
+         padding: 15px;
+         font-weight: bold;
+}
+
+#cabecalho{
+    text-align: center;
+    font-size: 24px;
+
+}
+
+#boxmodel{
+     border: 2px solid black;
+     padding: 10px;
+     margin: 15px;
+     text-align: center;
+
+     
+}
+
+.lista li{
+     padding: 10px;
+    
+}
+
+button:hover{
+    background-color: cadetblue;
+    transition: 0.5s;
+    padding: 15px;
+
+}
+
+p::first-letter{
+    color: red;
+    font-size: 200%;
+
+}
+
+ul li:nth-child(odd) {
+    background: lightgray;
+}
+
+#conteudo {
+    background: linear-gradient(to right, lightblue, rgb(80, 21, 21));
+    padding: 20px;
+
+}
+
+.footer {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    background: darkgray;
+    text-align: center;
+    padding: 10px;
+}

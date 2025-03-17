@@ -1,0 +1,466 @@
+---Aula3---
+
+-Sites para Emojis HTML
+1-https://www.w3schools.com/html/html_emojis.asp
+2-https://symbl.cc/pt/unicode-table/
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Introdução ao CSS
+CSS separa o conteúdo (HTML) da apresentação (estilos). Ele define cores, fontes, espaçamentos, layouts e muito mais.
+
+1.1 Como Adicionar CSS
+Há três formas principais de adicionar CSS a um documento HTML:
+
+Inline CSS: Adicionado diretamente no elemento HTML.
+
+html
+Copiar
+Editar
+<p style="color: blue;">Texto azul</p>
+Internal CSS: Dentro da <style> no <head>.
+
+html
+Copiar
+Editar
+<style>
+  p {
+    color: blue;
+  }
+</style>
+External CSS: Em um arquivo .css separado.
+
+html
+Copiar
+Editar
+<link rel="stylesheet" href="estilos.css">
+2. Seletores CSS
+Os seletores determinam quais elementos serão estilizados.
+
+2.1 Seletores Básicos
+Seletor de tag: Estiliza todos os elementos do tipo especificado.
+
+css
+Copiar
+Editar
+p {
+  color: red;
+}
+Seletor de classe: Aplica estilos a elementos com uma classe específica.
+
+css
+Copiar
+Editar
+.destaque {
+  font-weight: bold;
+}
+html
+Copiar
+Editar
+<p class="destaque">Texto em negrito</p>
+Seletor de ID: Aplica estilos a um único elemento com um ID.
+
+css
+Copiar
+Editar
+#titulo {
+  font-size: 24px;
+}
+html
+Copiar
+Editar
+<h1 id="titulo">Título Grande</h1>
+2.2 Seletores Avançados
+Seletor descendente:
+
+css
+Copiar
+Editar
+div p {
+  color: green;
+}
+Só afeta <p> dentro de <div>.
+
+Seletor filho (>):
+
+css
+Copiar
+Editar
+div > p {
+  color: blue;
+}
+Apenas <p> diretamente dentro de <div>.
+
+Seletor irmão adjacente (+):
+
+css
+Copiar
+Editar
+h1 + p {
+  font-style: italic;
+}
+Estiliza <p> que vem logo após <h1>.
+
+Seletor irmão geral (~):
+
+css
+Copiar
+Editar
+h1 ~ p {
+  color: gray;
+}
+Todos os <p> após <h1>.
+
+3. Propriedades CSS
+3.1 Cor e Texto
+css
+Copiar
+Editar
+color: red; /* Define a cor do texto */
+background-color: yellow; /* Define a cor do fundo */
+font-size: 16px; /* Tamanho da fonte */
+font-family: Arial, sans-serif; /* Tipo de fonte */
+text-align: center; /* Alinhamento do texto */
+3.2 Box Model (Espaçamento e Bordas)
+css
+Copiar
+Editar
+width: 200px; /* Largura */
+height: 100px; /* Altura */
+padding: 10px; /* Espaçamento interno */
+margin: 20px; /* Espaçamento externo */
+border: 2px solid black; /* Borda */
+3.3 Display e Posicionamento
+css
+Copiar
+Editar
+display: block; /* Ocupa toda a largura */
+display: inline-block; /* Ocupa só o necessário */
+position: absolute; /* Posição absoluta */
+position: relative; /* Posição relativa ao elemento pai */
+position: fixed; /* Fixa na tela */
+position: sticky; /* Fixa ao rolar a página */
+top: 10px; left: 20px; /* Distância do topo e esquerda */
+4. Layouts com CSS
+4.1 Flexbox
+Flexbox facilita layouts responsivos.
+
+css
+Copiar
+Editar
+display: flex;
+justify-content: center; /* Alinhamento horizontal */
+align-items: center; /* Alinhamento vertical */
+flex-wrap: wrap; /* Quebra de linha automática */
+4.2 Grid Layout
+O CSS Grid é mais avançado e permite criar layouts complexos.
+
+css
+Copiar
+Editar
+display: grid;
+grid-template-columns: repeat(3, 1fr); /* Três colunas iguais */
+grid-gap: 10px; /* Espaço entre os elementos */
+5. Media Queries (CSS Responsivo)
+Para adaptar o layout a diferentes tamanhos de tela.
+
+css
+Copiar
+Editar
+
+@media (max-width: 600px) {
+  body {
+    background-color: lightgray;
+  }
+}
+6. Animações e Efeitos
+6.1 Transições
+css
+Copiar
+Editar
+button {
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: blue;
+}
+6.2 Animações
+css
+Copiar
+Editar
+@keyframes mover {
+  from { transform: translateX(0); }
+  to { transform: translateX(100px); }
+}
+
+div {
+  animation: mover 2s infinite alternate;
+}
+
+
+
+
+
+9. Unidades de Medida no CSS
+O CSS oferece diversas unidades para definir tamanhos e espaçamentos.
+
+9.1 Unidades Absolutas
+px (pixel) – Valor fixo independente do contexto.
+cm, mm, in (polegada) – Pouco usadas na web.
+pt, pc – Unidades do mundo da impressão.
+9.2 Unidades Relativas
+% – Relativo ao elemento pai.
+em – Relativo ao tamanho da fonte do elemento pai.
+rem – Relativo ao tamanho da fonte do <html>.
+vw, vh – Relativo à largura e altura da viewport.
+vmin, vmax – Baseado no menor ou maior lado da tela.
+Exemplo de Unidades Relativas
+css
+Copiar
+Editar
+body {
+  font-size: 16px;
+}
+
+p {
+  font-size: 1.5em; /* 24px */
+}
+
+.container {
+  width: 80vw; /* 80% da largura da tela */
+  height: 50vh; /* 50% da altura da tela */
+}
+10. Tipografia Avançada
+O CSS permite controle total sobre fontes, espaçamentos e aparência do texto.
+
+10.1 Fontes Personalizadas
+Usando fontes do Google Fonts:
+
+html
+Copiar
+Editar
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+css
+Copiar
+Editar
+body {
+  font-family: 'Roboto', sans-serif;
+}
+10.2 Ajustes Avançados
+css
+Copiar
+Editar
+letter-spacing: 2px; /* Espaço entre letras */
+word-spacing: 5px; /* Espaço entre palavras */
+line-height: 1.6; /* Altura da linha */
+text-transform: uppercase; /* Texto em maiúsculas */
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra no texto */
+11. Manipulação Avançada do Box Model
+O modelo de caixa no CSS é crucial para layouts.
+
+11.1 Box-Sizing
+css
+Copiar
+Editar
+* {
+  box-sizing: border-box;
+}
+Isso faz com que width e height incluam padding e border, evitando cálculos complicados.
+
+11.2 Overflow e Scroll
+css
+Copiar
+Editar
+overflow: hidden; /* Esconde conteúdo que ultrapassa */
+overflow: scroll; /* Sempre exibe barra de rolagem */
+overflow: auto; /* Exibe a barra de rolagem apenas se necessário */
+11.3 Visibilidade e Opacidade
+css
+Copiar
+Editar
+visibility: hidden; /* Esconde, mas mantém o espaço */
+opacity: 0; /* Esconde sem ocupar espaço */
+12. Pseudo-classes e Pseudo-elementos
+12.1 Pseudo-classes
+Elas definem estados especiais para os elementos.
+
+css
+Copiar
+Editar
+a:hover {
+  color: red; /* Muda cor ao passar o mouse */
+}
+
+input:focus {
+  border: 2px solid blue; /* Muda a borda quando o campo recebe foco */
+}
+
+li:nth-child(odd) {
+  background-color: lightgray; /* Alterna cores em listas */
+}
+12.2 Pseudo-elementos
+Permitem estilizar partes específicas de um elemento.
+
+css
+Copiar
+Editar
+p::first-letter {
+  font-size: 2em; /* Primeira letra maior */
+  color: blue;
+}
+
+p::before {
+  content: "⚡"; /* Adiciona conteúdo antes do parágrafo */
+}
+
+p::after {
+  content: "✨"; /* Adiciona conteúdo depois */
+}
+13. Layouts Avançados com CSS
+13.1 Flexbox Profundo
+Flexbox permite criar layouts mais flexíveis e responsivos.
+
+css
+Copiar
+Editar
+.container {
+  display: flex;
+  justify-content: space-between; /* Distribui os elementos */
+  align-items: center; /* Centraliza na vertical */
+  flex-wrap: wrap; /* Permite que os elementos quebrem linha */
+}
+Propriedades Importantes para os Itens Flexíveis:
+
+css
+Copiar
+Editar
+.item {
+  flex-grow: 1; /* Faz o item crescer para preencher o espaço */
+  flex-shrink: 2; /* Faz o item encolher se necessário */
+  flex-basis: 200px; /* Define o tamanho inicial */
+}
+13.2 CSS Grid Avançado
+CSS Grid permite layouts complexos e altamente organizados.
+
+css
+Copiar
+Editar
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Três colunas iguais */
+  grid-template-rows: auto;
+  gap: 20px; /* Espaçamento entre os itens */
+}
+Posicionando Itens Específicos:
+
+css
+Copiar
+Editar
+.item1 {
+  grid-column: 1 / span 2; /* Ocupa duas colunas */
+  grid-row: 1 / 3; /* Ocupa duas linhas */
+}
+14. Efeitos Visuais e Animações
+CSS permite criar animações sem precisar de JavaScript.
+
+14.1 Transições
+css
+Copiar
+Editar
+button {
+  background-color: blue;
+  transition: background-color 0.5s ease-in-out;
+}
+
+button:hover {
+  background-color: red;
+}
+14.2 Animações com Keyframes
+css
+Copiar
+Editar
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+div {
+  animation: fadeIn 2s ease-in-out;
+}
+15. CSS Moderno e Boas Práticas
+15.1 Variáveis CSS
+css
+Copiar
+Editar
+:root {
+  --cor-primaria: #3498db;
+  --tamanho-fonte: 16px;
+}
+
+button {
+  background-color: var(--cor-primaria);
+  font-size: var(--tamanho-fonte);
+}
+15.2 CSS Escopado
+No CSS moderno, é comum modularizar o estilo para componentes.
+
+css
+Copiar
+Editar
+.botao {
+  background: red;
+}
+Isso evita conflitos de estilo entre diferentes partes da aplicação.
+
+15.3 Grid Responsivo + Media Queries
+css
+Copiar
+Editar
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Altera o layout para telas menores */
+  }
+}
+16. Técnicas Avançadas
+16.1 Dark Mode com CSS
+css
+Copiar
+Editar
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}
+16.2 Scroll Suave
+css
+Copiar
+Editar
+html {
+  scroll-behavior: smooth;
+}
+16.3 Estilizando Formulários
+css
+Copiar
+Editar
+input[type="text"] {
+  border: 2px solid gray;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+input:focus {
+  border-color: blue;
+}
+
+
+
