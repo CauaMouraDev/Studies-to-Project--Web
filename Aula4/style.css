@@ -1,0 +1,76 @@
+/* Remover posicionamento absoluto e usar margens/padding flexíveis */
+p {
+    float: left;
+    position: static; /* Remover o posicionamento absoluto */
+    margin: 0 
+    ; /* Centralizar e adicionar espaçamento */
+    max-width: 90%; /* Limitar a largura para telas menores */
+}
+
+#primeiro, #segundo, #terceiro {
+    position: static; /* Remover posicionamento relativo */
+    margin: 20px auto; /* Centralizar e adicionar espaçamento */
+    max-width: 90%; /* Ajustar largura */
+}
+
+h1 {
+    position: static; /* Remover posicionamento fixo */
+    background-color: rgb(231, 175, 108);
+    width: 90%; /* Ajustar largura para telas menores */
+    margin: 20px auto; /* Centralizar */
+    padding: 50px; /* Reduzir padding */
+    z-index: 1;
+    border: solid black;
+    border-radius: 30px;
+    text-align: center; /* Centralizar texto */
+}
+
+li {
+    position: static; /* Remover posicionamento relativo */
+    margin: 10px auto; /* Ajustar espaçamento */
+    max-width: 90%; /* Ajustar largura */
+}
+
+blockquote {
+    clear: both;
+    position: static; /* Remover posicionamento relativo */
+    width: 90%; /* Ajustar largura */
+    margin: 20px auto; /* Centralizar */
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    padding: 10px; /* Ajustar padding */
+    font-style: italic;
+    text-align: center; /* Centralizar texto */
+}
+
+img:hover {
+    transform: rotate(360deg) ;
+    transition: 1.5s;
+    float:right;
+    position: static; /* Remover posicionamento relativo */
+    max-width: 100%; /* Garantir que a imagem não ultrapasse o container */
+    height: auto; /* Manter proporção */
+    display: block; /* Centralizar imagem */
+    margin: 20px auto;
+}
+
+
+footer {
+    clear: both;
+    position: static; /* Remover posicionamento relativo */
+    margin: 20px auto; /* Ajustar espaçamento */
+    text-align: center; /* Centralizar conteúdo */
+}
+
+body {
+    background-color: bisque;
+    font-family: Arial, sans-serif; /* Melhorar legibilidade */
+    line-height: 1.6; /* Melhorar espaçamento entre linhas */
+    padding: 10px; /* Adicionar espaçamento interno */
+}
+
+
+
+header{
+    margin: 0;
+}
