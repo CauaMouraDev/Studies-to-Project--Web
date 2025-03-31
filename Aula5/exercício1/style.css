@@ -1,0 +1,39 @@
+@media only screen and (max-width:400px){
+    body{
+        background-color: blueviolet;
+        
+    }
+}
+
+
+.col-1{   
+       width: 20%;
+       float:left;
+       padding:80px;
+       background-color: purple;
+       box-sizing: border-box;
+}
+
+
+.col-2{
+      width: 20%;
+      float: left;
+      padding:80px;
+      background-color: yellow;
+      box-sizing: border-box;
+    
+    
+    
+    
+    }
+
+.col-3{
+      width: 20%;
+      float: left;
+      padding:80px;
+      background-color: rgb(25, 165, 123);
+      box-sizing: border-box
+    
+    
+    
+    }
