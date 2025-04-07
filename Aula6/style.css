@@ -1,0 +1,95 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f2f7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cabecalho {
+  background-color: #7e9ab5;
+  color: branco;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(19, 43, 110);
+}
+
+.navegacao {
+  display: flex;
+  gap: 2rem;
+}
+
+.navegacao a {
+  color: branco;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navegacao a:hover {
+  text-decoration: underline;
+}
+
+.principal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.boas-vindas h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.boas-vindas span {
+  color: #2e649a;
+}
+
+.boas-vindas p {
+  margin-bottom: 2rem;
+  color: #1585d0;
+}
+
+.cartoes {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cartao {
+  background: branco;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.cartao:hover {
+  transform: scale(1.05);
+}
+
+.rodape {
+  background-color: #6b89a7;
+  color: branco;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
