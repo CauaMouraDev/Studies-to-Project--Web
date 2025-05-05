@@ -1,0 +1,42 @@
+body{
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+    background-color: hsl(160, 84%, 64%);
+}
+    h1{
+        color:darkcyan
+    }
+
+
+.lampada{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.ligada{
+    background-color: yellow;
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.8);
+
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s;
+}
+button:hover{
+    background-color: #0056b3;
+}

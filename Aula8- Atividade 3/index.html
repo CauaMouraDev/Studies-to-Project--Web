@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Agenda de Eventos</h1>
+
+    <div id="buttons">
+      <button type="button" onclick="handleAddEvent()">Adicionar Evento</button>
+      <button type="button" onclick="handleEditEvent()">Editar Evento</button>
+      <button type="button" onclick="handleRemoveEvent()">
+        Remover Evento
+      </button>
+    </div>
+
+    <div id="result">
+      <h2>Resultado</h2>
+      <ul id="eventList"></ul>
+    </div>
+
+    <script src="actions.js"></script>
+  </body>
+</html>
