@@ -1,0 +1,219 @@
+/* style.css - To-do List com layout customizado */
+
+:root {
+  --primary: #f7931e;
+  --secondary: #4caf50;
+  --bg-light: #fff;
+  --bg-dark: #222;
+  --text-light: #fff;
+  --text-dark: #222;
+  --accent: #2196f3;
+  --danger: #e53935;
+  --footer: #4caf50;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+header {
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem 0 0.5rem 0;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.todolist-desc {
+  margin: 0.5rem 1rem 1.5rem 1rem;
+  font-size: 1rem;
+}
+
+.todolist-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.todolist-img {
+  width: 120px;
+  height: 120px;
+  background: #bbb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.todolist-center {
+  background: #2196f3;
+  color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1 1 250px;
+  min-width: 220px;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+body.dark .todolist-center {
+  background: #1565c0;
+}
+
+.todolist-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.todolist-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.todolist-form button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.todolist-form button:hover {
+  background: #ff9800;
+}
+
+.todolist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.todolist-list li {
+  background: #fff;
+  color: #222;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  padding: 0.6rem 0.5rem 0.6rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px #0001;
+  transition: background 0.2s, color 0.2s;
+}
+body.dark .todolist-list li {
+  background: #333;
+  color: #fff;
+}
+.todolist-list li.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.todolist-list .actions {
+  display: flex;
+  gap: 0.3rem;
+}
+.todolist-list button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  transition: background 0.2s, color 0.2s;
+}
+.todolist-list .btn-complete {
+  color: var(--secondary);
+}
+.todolist-list .btn-remove {
+  color: var(--danger);
+}
+.todolist-list .btn-complete:hover {
+  background: #e8f5e9;
+}
+.todolist-list .btn-remove:hover {
+  background: #ffebee;
+}
+
+.todolist-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.todolist-actions button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.todolist-actions button:hover {
+  background: #1976d2;
+}
+
+.todolist-list li.prioritaria {
+  font-weight: bold;
+  color: #f7931e !important;
+  background: #fffde7;
+}
+body.dark .todolist-list li.prioritaria {
+  background: #333;
+  color: #ffd54f !important;
+}
+
+footer {
+  background: var(--footer);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.footer-img {
+  width: 40px;
+  height: 40px;
+  background: #888;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .todolist-main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .todolist-center {
+    min-width: 0;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexSite - To-do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">FlexSite</div>
+      <nav class="nav">
+        <a href="#" class="nav-link">Início</a>
+        <a href="#" class="nav-link">Sobre</a>
+        <a href="#" class="nav-link">Projetos</a>
+        <a href="#" class="nav-link">Contato</a>
+      </nav>
+    </header>
+    <main class="main">
+      <h1 class="main-title">
+        Bem-vindo ao <span class="highlight">FlexSite</span>
+      </h1>
+      <p class="main-desc">
+        Um site totalmente montado com Flexbox
+        <span style="font-size: 1.2em">💪</span>
+      </p>
+      <div class="cards">
+        <div class="card">
+          <form id="todolist-form" class="todolist-form" autocomplete="off">
+            <input
+              id="todolist-input"
+              type="text"
+              placeholder="Digite uma tarefa..."
+              maxlength="60"
+              required
+            />
+            <button type="submit">Adicionar</button>
+          </form>
+          <ul id="todolist-list" class="todolist-list"></ul>
+          <div class="todolist-actions">
+            <button id="btn-prioritaria" type="button">
+              Destacar Prioritária
+            </button>
+            <button id="btn-theme" type="button">🌙 Modo Escuro</button>
+          </div>
+        </div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+      </div>
+    </main>
+    <footer class="footer">
+      © 2025 FlexSite. Todos os direitos reservados.
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>
