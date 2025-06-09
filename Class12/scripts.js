@@ -83,8 +83,18 @@ document.addEventListener("DOMContentLoaded", function () {
     btnE.textContent = "✏️";
     btnE.onclick = () => {
       if (li.querySelector("input")) return;
+      // Captura o texto da tarefa corretamente, mesmo após edições
+      let textoTarefa = Array.from(li.childNodes).find(
+        (node) =>
+          node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== ""
+      );
+      if (!textoTarefa) {
+        // Se não encontrar, cria um novo nó de texto vazio
+        textoTarefa = document.createTextNode("");
+        li.insertBefore(textoTarefa, li.firstChild);
+      }
       const inputEdit = document.createElement("input");
-      inputEdit.value = li.firstChild.textContent;
+      inputEdit.value = textoTarefa.textContent.trim();
       const btnS = document.createElement("button");
       btnS.textContent = "Salvar";
       btnS.onclick = () => {
@@ -96,14 +106,18 @@ document.addEventListener("DOMContentLoaded", function () {
           inputEdit.focus();
           return;
         }
-        li.firstChild.textContent = inputEdit.value;
+        // Remove input e botão salvar
         inputEdit.remove();
         btnS.remove();
+        // Insere o texto editado no início do li, antes dos botões
+        const novoTexto = document.createTextNode(inputEdit.value + " ");
+        li.insertBefore(novoTexto, li.firstChild);
         btnE.style.display = "inline-block";
       };
+      // Remove o texto da tarefa do DOM para mostrar o input
+      if (textoTarefa) textoTarefa.remove();
       li.insertBefore(inputEdit, btnC);
       li.insertBefore(btnS, btnC);
-      li.firstChild.remove();
       btnE.style.display = "none";
       inputEdit.focus();
       inputEdit.onkeydown = (e) => {
@@ -142,7 +156,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (btnPrioritaria) {
     btnPrioritaria.onclick = function () {
       // Remove prioritaria de todos
-      list.querySelectorAll("li").forEach((li) => li.classList.remove("prioritaria"));
+      list
+        .querySelectorAll("li")
+        .forEach((li) => li.classList.remove("prioritaria"));
       // Adiciona na primeira tarefa não concluída
       const li = list.querySelector("li:not(.completed)");
       if (li) {
