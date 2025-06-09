@@ -126,35 +126,37 @@ document.addEventListener("DOMContentLoaded", function () {
   // Botão de modo escuro
   const btnTheme = document.getElementById("btn-theme");
   if (btnTheme) {
-    btnTheme.onclick = () => {
+    btnTheme.onclick = function () {
       document.body.classList.toggle("dark");
-      btnTheme.textContent = document.body.classList.contains("dark")
-        ? "☀️ Modo Claro"
-        : "🌙 Modo Escuro";
+      // Troca o texto do botão
+      if (document.body.classList.contains("dark")) {
+        btnTheme.textContent = "☀️ Modo Claro";
+      } else {
+        btnTheme.textContent = "🌙 Modo Escuro";
+      }
     };
   }
 
   // Botão de priorizar
   const btnPrioritaria = document.getElementById("btn-prioritaria");
   if (btnPrioritaria) {
-    btnPrioritaria.onclick = () => {
-      // Remove a classe de todas as tarefas
-      list
-        .querySelectorAll("li")
-        .forEach((li) => li.classList.remove("prioritaria"));
-      // Marca a primeira tarefa pendente
+    btnPrioritaria.onclick = function () {
+      // Remove prioritaria de todos
+      list.querySelectorAll("li").forEach((li) => li.classList.remove("prioritaria"));
+      // Adiciona na primeira tarefa não concluída
       const li = list.querySelector("li:not(.completed)");
       if (li) {
         li.classList.add("prioritaria");
         msg.textContent = "Tarefa marcada como prioritária!";
         msg.style.display = "block";
         msg.style.color = "#ffd54f";
+        setTimeout(() => (msg.style.display = "none"), 2000);
       } else {
         msg.textContent = "Nenhuma tarefa pendente para priorizar.";
         msg.style.display = "block";
         msg.style.color = "#c00";
+        setTimeout(() => (msg.style.display = "none"), 2000);
       }
-      setTimeout(() => (msg.style.display = "none"), 2000);
     };
   }
 });
