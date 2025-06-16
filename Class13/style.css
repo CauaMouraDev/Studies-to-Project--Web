@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+header {
+  background-color: aquamarine;
+  width: 100vw;
+  padding: 5px;
+  color: #0293edea;
+}
+
+#result {
+    border: 3px solid rgb(11, 206, 92);
+    height: 100px;
+    width:50%;
+    margin: 0 auto;
+    background-color: aquamarine;
+}
