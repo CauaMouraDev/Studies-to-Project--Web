@@ -6,15 +6,15 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
     }
 });
 
-function buscarSeries(query) {
+  function buscarSeries(query) {
     const url = `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`;
-    fetch(url)
-        .then(response => response.json())
-        .then(data => mostrarResultados(data))
+    axios.get(url)
+        .then(response => mostrarResultados(response.data))
         .catch(() => {
             document.getElementById('results').innerHTML = '<p>Erro ao buscar séries.</p>';
         });
 }
+
 
 function mostrarResultados(series) {
     const resultsDiv = document.getElementById('results');
