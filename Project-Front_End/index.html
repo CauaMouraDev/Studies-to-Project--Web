@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Mercado - Sistema de Gestão</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Mercado</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#itens">Itens</a></li>
+            <li class="nav-item"><a class="nav-link" href="#clientes">Clientes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#funcionarios">Funcionários</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pedidos">Pedidos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carrossel Bootstrap -->
+    <div id="mainCarousel" class="carousel slide mt-3" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../Class04/img/4855323567_eace3b2f31_z.jpg" class="d-block w-100" alt="Promoção 1" style="max-height: 300px; object-fit: cover;">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Bem-vindo ao Mercado!</h5>
+            <p>Gerencie seus itens, clientes, funcionários e pedidos facilmente.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../Class03/img/imagem do ney.webp" class="d-block w-100" alt="Promoção 2" style="max-height: 300px; object-fit: cover;">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Controle Total</h5>
+            <p>Cadastre, edite, consulte e exclua registros de forma prática.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+
+    <!-- Cards de Funcionalidades -->
+    <div class="container mt-5">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <h5 class="card-title">Itens</h5>
+              <p class="card-text">Gerencie os produtos do mercado.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalItem">Cadastrar Item</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <h5 class="card-title">Clientes</h5>
+              <p class="card-text">Cadastre e consulte clientes.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCliente">Cadastrar Cliente</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <h5 class="card-title">Funcionários</h5>
+              <p class="card-text">Gerencie funcionários do mercado.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFuncionario">Cadastrar Funcionário</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <h5 class="card-title">Pedidos</h5>
+              <p class="card-text">Visualize e envie pedidos.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPedido">Novo Pedido</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Exemplo (Cadastro de Item) -->
+    <div class="modal fade" id="modalItem" tabindex="-1" aria-labelledby="modalItemLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalItemLabel">Cadastrar Item</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formItem">
+              <div class="mb-3">
+                <label for="itemNome" class="form-label">Nome do Item</label>
+                <input type="text" class="form-control" id="itemNome" required>
+              </div>
+              <div class="mb-3">
+                <label for="itemQuantidade" class="form-label">Quantidade</label>
+                <input type="number" class="form-control" id="itemQuantidade" required>
+              </div>
+              <div class="mb-3">
+                <label for="itemPreco" class="form-label">Preço</label>
+                <input type="number" class="form-control" id="itemPreco" step="0.01" required>
+              </div>
+              <button type="submit" class="btn btn-success">Salvar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outros modais de cadastro podem ser criados seguindo o exemplo acima -->
+
+    <footer class="text-center mt-5 mb-3 text-muted">&copy; 2025 Mercado - Sistema de Gestão</footer>
+</body>
+</html>
