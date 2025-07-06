@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bem-vindo ao Mercado</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(135deg, #2d6cdf 0%, #20bf6b 100%) fixed;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .apresentacao-hero {
+        background: #fff;
+        border-radius: 32px;
+        box-shadow: 0 8px 32px #2d6cdf22;
+        padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        max-width: 420px;
+      }
+      .apresentacao-hero img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        margin-bottom: 1.2rem;
+      }
+      .apresentacao-hero h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 1.2rem;
+      }
+      .apresentacao-hero p {
+        color: #444;
+        font-size: 1.1rem;
+        margin-bottom: 2.2rem;
+      }
+      .btn-entrar {
+        background: var(--gradient);
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border-radius: 24px;
+        padding: 0.9rem 2.5rem;
+        box-shadow: 0 2px 12px #2d6cdf22;
+        transition: background 0.2s, transform 0.2s;
+      }
+      .btn-entrar:hover {
+        background: linear-gradient(90deg, var(--secondary), var(--primary));
+        color: #fff;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="apresentacao-hero mt-5">
+      <img
+        src="https://cdn-icons-png.flaticon.com/128/3081/3081559.png"
+        alt="Logo Mercado"
+      />
+      <h1>Bem-vindo ao Mercado</h1>
+      <p>
+        O melhor sistema para compras, gestão de clientes e funcionários.<br />Produtos
+        frescos, ofertas e praticidade para você!
+      </p>
+      <a href="login.html" class="btn btn-entrar">Entrar</a>
+    </div>
+    <footer class="text-center mt-5 mb-3 text-muted">
+      &copy; 2025 Mercado - Sistema de Gestão
+    </footer>
+  </body>
+</html>
