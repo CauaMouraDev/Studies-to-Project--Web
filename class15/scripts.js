@@ -39,8 +39,9 @@
 // console.log("The potentiation of 2 to the power of 3 is: " + math.potentiation(2, 3));
 // console.log("The multiplication of 3 and 4 is: " + math.multiplication(3, 4));
 
- const strings = require('./strings.js');
+//  const strings = require('./strings.js');
 
- console.log("The number of words in the text is: " + strings.contarPalavras("Hello world, this is a test."));
- console.log("The number of letters in the text is: " + strings.contarLetras("Hello world, this is a test."));
- console.log("The frequency of words in the text is: ", + strings.frequenciaPalavraes("Hello world, this is a test. Hello world."));
+//EXERCÍCIO 5
+//  console.log("The number of words in the text is: " + strings.contarPalavras("Hello world, this is a test."));
+//  console.log("The number of letters in the text is: " + strings.contarLetras("Hello world, this is a test."));
+//  console.log("The frequency of words in the text is: ", + strings.frequenciaPalavraes("Hello world, this is a test. Hello world."));
