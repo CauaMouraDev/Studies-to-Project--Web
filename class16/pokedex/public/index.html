@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokédex</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Pokédex</h1>
+    <input type="text" id="pokemonName" placeholder="Digite o nome do Pokémon">
+    <button id="searchBtn">Buscar</button>
+
+    <div class="pokemon-info" id="pokemonInfo">
+      <!-- Aqui aparecerá o Pokémon -->
+    </div>
+  </div>
+
+  <script>
+    const searchBtn = document.getElementById('searchBtn');
+    const pokemonInfo = document.getElementById('pokemonInfo');
+
+    searchBtn.addEventListener('click', async () => {
+      const name = document.getElementById('pokemonName').value;
+      if (!name) return alert('Digite o nome do Pokémon!');
+
+      try {
+        const res = await fetch(`/pokemon?name=${encodeURIComponent(name)}`);
+        const data = await res.json();
+
+        if (data.error) {
+          pokemonInfo.innerHTML = `<p>${data.error}</p>`;
+          return;
+        }
+
+        pokemonInfo.innerHTML = `
+          <h2>${data.name} (#${data.id})</h2>
+          <img src="${data.image}" alt="${data.name}">
+          <p><strong>Tipos:</strong> ${Array.isArray(data.types) ? data.types.join(', ') : data.types}</p>
+          <p><strong>Habilidades:</strong> ${Array.isArray(data.abilities) ? data.abilities.join(', ') : data.abilities}</p>
+          <p><strong>Altura:</strong> ${data.height}m</p>
+          <p><strong>Peso:</strong> ${data.weight}kg</p>
+        `;
+      } catch (err) {
+        pokemonInfo.innerHTML = `<p>Erro ao buscar Pokémon.</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
