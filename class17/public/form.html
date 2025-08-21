@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Aluno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Buscar Aluno (GET)</h2>
+    <form method="get" action="/buscar">
+        <label for="curso">Curso:</label>
+        <input type="text" id="curso" name="curso">
+        <button type="submit">Buscar</button>
+    </form>
+    <h2>Cadastrar Aluno (POST)</h2>
+    <form method="post" action="/alunos">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="prontuario">Prontuário:</label>
+        <input type="text" id="prontuario" name="prontuario" required>
+        <label for="curso">Curso:</label>
+        <input type="text" id="curso" name="curso" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>
