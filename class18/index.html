@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>To-Do List - Class18</title>
+	<style>
+		body { font-family: Arial, sans-serif; margin: 40px; }
+		.feito { text-decoration: line-through; color: gray; }
+		ul { list-style: none; padding: 0; }
+		li { margin-bottom: 8px; }
+		button { margin-left: 8px; }
+	</style>
+</head>
+<body>
+	<h1>To-Do List</h1>
+	<form id="form-tarefa">
+		<input type="text" id="titulo" placeholder="Nova tarefa" required>
+		<button type="submit">Adicionar</button>
+	</form>
+	<ul id="lista-tarefas"></ul>
+
+	<script>
+		const API = 'http://localhost:3000/tarefas';
+		const lista = document.getElementById('lista-tarefas');
+		const form = document.getElementById('form-tarefa');
+
+		function carregarTarefas() {
+			fetch(API)
+				.then(res => res.json())
+				.then(tarefas => {
+					lista.innerHTML = '';
+					tarefas.forEach(t => {
+						const li = document.createElement('li');
+									li.innerHTML = `<span class="${t.feito ? 'feito' : ''}">${t.titulo}</span>` +
+										`<button onclick="alterarTarefa(${t.id}, '${t.titulo}', ${!t.feito})">${t.feito ? 'Desfazer' : 'Fazer'}</button>` +
+										`<button onclick="editarTitulo(${t.id}, '${t.titulo}', ${t.feito})">Editar</button>` +
+										`<button onclick="deletarTarefa(${t.id})">Deletar</button>`;
+		// Editar título da tarefa
+		window.editarTitulo = function(id, tituloAtual, feito) {
+			const novoTitulo = prompt('Novo título da tarefa:', tituloAtual);
+			if (novoTitulo && novoTitulo !== tituloAtual) {
+				fetch(`${API}/${id}`, {
+					method: 'PUT',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ titulo: novoTitulo, feito })
+				})
+				.then(carregarTarefas);
+			}
+		};
+						lista.appendChild(li);
+					});
+				});
+		}
+
+		form.onsubmit = function(e) {
+			e.preventDefault();
+			const titulo = document.getElementById('titulo').value;
+			fetch(API, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ titulo, feito: false })
+			})
+			.then(() => {
+				form.reset();
+				carregarTarefas();
+			});
+		};
+
+		window.alterarTarefa = function(id, titulo, feito) {
+			fetch(`${API}/${id}`, {
+				method: 'PUT',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ titulo, feito })
+			})
+			.then(carregarTarefas);
+		};
+
+		window.deletarTarefa = function(id) {
+			fetch(`${API}/${id}`, { method: 'DELETE' })
+				.then(carregarTarefas);
+		};
+
+		carregarTarefas();
+	</script>
+</body>
+</html>
